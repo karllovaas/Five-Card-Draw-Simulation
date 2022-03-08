@@ -5,14 +5,7 @@ Created on Thu Feb  3 18:10:53 2022
 @author: lovaa
 """
 
-## need to get in the habit of commenting pretty much everything that i do 
-## 
-## poker 
 
-## notice here that the aces and face cards have been assigned numbers 
-## king is 13, queen is 12 
-
-## in general i think it would be more clear to have 11 == J and 12 = Q and 13= K and then 1 = A 
 
 import random 
 
@@ -230,28 +223,8 @@ def pair_finder(hand):
     else:
         return None 
                                    
-print(pair_finder([[8, 'C'], [8, 'C'], [8, 'S'], [6, 'H'], [6, 'H']]))
+
         
-'''
-    for key in suit_dict:
-        if suit_dict[key] >= 3:
-            flush = [card for card in hand if card[1] == key] 
-            flushes.append(flush)
-            print(flushes)
-            dead = []
-            for index,pair in enumerate(pairs):
-                for card in pair:
-                    if card in flush:
-                        print(card)
-                        dead.append(pairs[index])
-            for death in dead:
-                pairs.remove(death)
-            print(dead)
-    '''
-'''
-print(pair_finder([[10, 'C'], [10, 'C'], [8, 'S'], [12, 'H'], [12, 'H']]))
-print(len(pair_finder([[13, 'C'], [13, 'C'], [12, 'S'], [12, 'H'], [12, 'H']])))
-'''
 
 def straight_finder(hand,search_len = 5):
     rank_dict = {card[0]:0 for card in hand}
@@ -291,13 +264,6 @@ def straight_finder(hand,search_len = 5):
     else: 
         return None 
 
-        #straights.append(straight_count_plus + straight_count_below-1)
-    #if max(straights) >= 5 :
-        #return True
-    #else:
-        #return False 
-
-print(straight_finder([[8, 'C'], [9, 'C'], [7, 'S'], [6, 'H'], [10, 'H']]))
         
 
 def best_hand(hand):
@@ -315,29 +281,6 @@ def best_hand(hand):
 print(best_hand([[8, 'C'], [8, 'C'], [8, 'C'], [6, 'H'], [6, 'C']]))       
         
        
-'''
-deck1 = {13: 1, 12: 1, 11: 1, 10: 1, 9: 1}
-print(deck1.values())
-'''
-
-'''    
-def pair_finder(X):
-    #function takes a hand of cards and identifies all pairs
-    
-    pairs = []
-    for i in range(len(X)-1):
-        iter = 0
-        pairs = []
-        while X[i][1] != X[iter+1][1] :
-            iter = iter + 1
-            if iter+i > len(X):
-                break
-        if iter != 0:
-            pairs.append([i,i+iter])
-    print(pairs)
-
-pair_finder(deal1)
-'''
 
 class Cards(object):
     
@@ -380,39 +323,7 @@ class Card(Cards):
         self.rank = card[0]
         self.suit = card[1]
         
-    
 
-print(as_strings(hand2,2))
-    
-
-
-hand1 = Cards([[1,'D'],[2,'H']])
-
-
-### probably makes it more clear for the class not to have __init__ 
-
-class Cards2():
-    def setcards(self,cards):
-        self.data = cards 
-    def display(self):
-        print(self.data)
-
-hand3 = [[4, 'C'],
- [12, 'D'],
- [5, 'C'],
- [8, 'C'],[4, 'C'],
-  [9, 'D'],
-  [5, 'C'],
-  [8, 'C'],
-  [4, 'C'],
-   [9, 'D'],
-   [5, 'C'],
-   [8, 'C'],[4, 'C'],
-    [9, 'D'],
-    [5, 'C'],
-    [8, 'C']]
-
-'''or i could try printing multiline strings next to eachother '''        
 
 print(" __  "*len(hand3))
 for index,card in enumerate(hand3):
@@ -565,5 +476,3 @@ def five_card_draw2(num_players):
  
 
 
-## cool application of card printing
-## the card printing program should be able to print any number of cards 
